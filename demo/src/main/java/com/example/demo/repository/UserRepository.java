@@ -2,6 +2,8 @@ package com.example.demo.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.entity.user.UserEntity;
@@ -17,9 +19,9 @@ import org.springframework.data.repository.query.Param;
 // @RepositoryDefinition(domainClass = UserEntity.class, idClass = Long.class)
 public interface UserRepository extends JpaRepository<UserEntity, Long>, JpaSpecificationExecutor<UserEntity> {
 
-    UserEntity findByUserNameAndEmail(String userName, String userEmail);
+    Page<UserEntity> findByUserName(String userName, Pageable pageable);
 
-    UserEntity findByUserName(String userName);
+    UserEntity findByUserNameAndUserEmail(String userName, String userEmail);
 
     List<UserEntity> findByUserNameStartingWith(String userName);
 
