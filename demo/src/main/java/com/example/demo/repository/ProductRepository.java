@@ -3,9 +3,8 @@ package com.example.demo.repository;
 import com.example.demo.entity.ProductEntity;
 import java.util.List;
 
-public interface ProductRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    ProductEntity createProduct(ProductEntity productEntity);
+public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
 
-    List<ProductEntity> findAllProducts();
 }
