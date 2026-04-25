@@ -13,3 +13,18 @@ spring:
       hibernate:
         format_sql: true
         use_sql_comments: true
+  mail:
+    port: 587
+    host: xxxx
+    password: aaaa
+    username: aaaa
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
